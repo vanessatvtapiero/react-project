@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+SA+Hand:wght@400..700&family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Formulario del SENA V1</h1>
+        <p>GRACIAS POR DEJAR SUS DATOS</p>
+        <form id="formularioAvanzado" novalidate>
+            <div class="form-group">
+                <label for="Name">Name*</label>
+                <input type="text" id="Name" name="Name" placeholder="Please enter your name" required autofocus />
+            </div>
+            <div class="form-group">
+                <label for="Email">Email *</label>
+                <input type="email" id="Email" name="Email" required placeholder="Please enter your email" />
+            </div>
+            <div class="form-group">
+                <label for="Age">Age *</label>
+                <input type="date" id="Age" name="Age" required />
+            </div>
+            <div class="form-group">
+                <label for="Selecionar">Choose an option</label>
+                <select name="Selecionar" id="Selecionar">
+                    <option value="opcion1">Rice with chicken</option>
+                    <option value="opcion2">Sancocho</option>
+                    <option value="opcion3">Hamburger</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <p>¿Planeas comprar un auto nuevo en los próximos 5 años?</p>
+                <input type="radio" id="yes" name="Car" value="Yes">
+                <label for="yes">Sí</label>
+                <input type="radio" id="no" name="Car" value="No">
+                <label for="no">No</label>
+                <input type="radio" id="maybe" name="Car" value="Maybe">
+                <label for="maybe">Quizás</label>
+            </div>
+            <div class="form-group">
+                <label for="FavoriteBrand">¿Cuál es tu marca de auto favorita?</label>
+                <select name="FavoriteBrand" id="FavoriteBrand">
+                    <option value="Toyota">Toyota</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <p>¿Qué tipo de medio de transporte posees?</p>
+                <input type="checkbox" id="Car" name="transport" value="Car">
+                <label for="Car">Car</label>
+                <input type="checkbox" id="Boat" name="transport" value="Boat">
+                <label for="Boat">Boat</label>
+                <input type="checkbox" id="Bicycle" name="transport" value="Bicycle">
+                <label for="Bicycle">Bicycle</label>
+                <input type="checkbox" id="Motorcycle" name="transport" value="Motorcycle">
+                <label for="Motorcycle">Motorcycle</label>
+                <input type="checkbox" id="Plane" name="transport" value="Plane">
+                <label for="Plane">Plane</label>
+                <input type="checkbox" id="Bike" name="transport" value="Bike">
+                <label for="Bike">Bike</label>
+            </div>
+            <div class="form-group">
+                <label for="comentarios">¿Tienes algún comentario o sugerencia?</label>
+                <textarea id="comentarios" name="comentarios" rows="4" maxlength="500"
+                    placeholder="Por favor ingresa tus comentarios"></textarea>
+            </div>
+            <input type="submit" id="submit" value="Enviar" />
+        </form>
+    </div>
+<div id="modal-sucess" class="modal hidden">
+    <div class="modal-content">
+        <h2 id="modal-title">Datos enviados con éxito!!!</h2>
+        <p id="modal-description">Tu formulario ha sido enviado correctamente.</p>
+        <button id="close-modal" type="button">Cerrar</button>
+    </div>
+    </div>
+
+    <script type="module" src="../linters/js/main.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("service_j8w7ygh");
+        })();
+    </script>
+</body>
+
+</html>
